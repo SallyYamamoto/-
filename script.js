@@ -12,6 +12,7 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+
 // --- メイン処理 ---
 document.addEventListener("DOMContentLoaded", async () => {
   const data = await fetchData().catch(err => {
