@@ -1,11 +1,17 @@
-# _config.yml (ファイルに追加)
+# _config.yml
+
+# データのロード
+data:
+  verbs: german_verbs  # _data/german_verbs.json を参照
+
+# 動的ページの定義 (コレクション)
 collections:
   verbs:
     output: true
-    permalink: /verb/:title/
+    permalink: /verb/:path/  # 例: /verb/abstellen/
   prefixes:
     output: true
-    permalink: /prefix/:title/
+    permalink: /prefix/:path/ # 例: /prefix/ab/
   stems:
     output: true
-    permalink: /stem/:title/
+    permalink: /stem/:path/   # 例: /stem/stellen/
