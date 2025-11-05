@@ -78,32 +78,49 @@ if (document.getElementById("verbs")) {
 
     document.getElementById("title").textContent = title;
 
-    const colors = [
-      "#5cb85c", "#0275d8", "#3f51b5", "#009688",
-      "#ba68c8", "#ff7043", "#ff9800", "#f0ad4e",
-      "#d9534f", "#607d8b", "#0288d1", "#8e44ad",
-      "#16a085", "#c2185b", "#6dab6d", "#00796b",
-      "#8d6e63", "#ad4c4c", "#9e9e9e"
-    ];
+    // --- 接頭辞別に固定カラー設定 ---
+    const prefixColors = {
+      ab: "#5cb85c",
+      an: "#0275d8",
+      auf: "#3f51b5",
+      aus: "#009688",
+      dar: "#ba68c8",
+      her: "#ff7043",
+      ein: "#f0ad4e",
+      fest: "#d9534f",
+      um: "#607d8b",
+      vor: "#0288d1",
+      zurück: "#8e44ad",
+      zusammen: "#16a085",
+      nach: "#c2185b",
+      bei: "#6dab6d",
+      bereit: "#00796b",
+      be: "#8d6e63",
+      ent: "#ad4c4c",
+      ver: "#9e9e9e",
+      zu: "#795548"
+    };
 
-    const listHTML = filtered.map((item, i) => `
-      <div class="col">
-        <h3 style="background-color:${colors[i % colors.length]};">${item["単語"]}</h3>
-        <div class="section"><b><span>意味</span>：</b> ${item["意味"]}</div>
-        <div class="section"><b><span>英訳</span>：</b> ${item["英訳"]}</div>
-        <div class="section"><b><span>接頭辞</span>：</b> ${item["接頭辞"]}（${item["接頭辞基本意味"] || ""}）</div>
-        <div class="section"><b><span>語感</span>：</b> ${item["語感"] || ""}</div>
-        <div class="section"><b><span>構文</span>：</b> <i>${item["構文"] || ""}</i></div>
-        <div class="section"><b><span>分離性</span>：</b> ${item["分離性"] || ""}</div>
-        <div class="section"><b><span>活用</span>：</b> ${item["活用"] || ""}</div>
-        <div class="section"><b><span>例文</span>：</b><br>
-          ${item["例文1"] || ""}<br>（${item["日本語訳1"] || ""}）<br><br>
-          ${item["例文2"] || ""}<br>（${item["日本語訳2"] || ""}）
+    const listHTML = filtered.map(item => {
+      const prefixColor = prefixColors[item["接頭辞"]] || "#607d8b";
+      return `
+        <div class="col">
+          <h3 style="background-color:${prefixColor};">${item["単語"]}</h3>
+          <div class="section"><b><span>意味</span>：</b> ${item["意味"]}</div>
+          <div class="section"><b><span>英訳</span>：</b> ${item["英訳"]}</div>
+          <div class="section"><b><span>接頭辞</span>：</b> ${item["接頭辞"]}（${item["接頭辞基本意味"] || ""}）</div>
+          <div class="section"><b><span>語感</span>：</b> ${item["語感"] || ""}</div>
+          <div class="section"><b><span>構文</span>：</b> <i>${item["構文"] || ""}</i></div>
+          <div class="section"><b><span>分離性</span>：</b> ${item["分離性"] || ""}</div>
+          <div class="section"><b><span>活用</span>：</b> ${item["活用"] || ""}</div>
+          <div class="section"><b><span>例文</span>：</b><br>
+            ${item["例文1"] || ""}<br>（${item["日本語訳1"] || ""}）<br><br>
+            ${item["例文2"] || ""}<br>（${item["日本語訳2"] || ""}）
+          </div>
+          <div class="section"><b><span>派生語</span>：</b> ${item["派生語"] || ""}</div>
         </div>
-        <div class="section"><b><span>派生語</span>：</b> ${item["派生語"] || ""}</div>
-        <div class="subnote">🔤 <b>対応英単語：</b> <i>${item["対応英単語"] || ""}</i></div>
-      </div>
-    `).join("");
+      `;
+    }).join("");
 
     document.getElementById("verbs").innerHTML =
       listHTML || `<p>該当する単語がありません。</p>`;
