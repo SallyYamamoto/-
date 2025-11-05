@@ -35,17 +35,21 @@
     .card {
       border: 1px solid #ccc;
       border-radius: 10px;
-      padding: 20px 25px;
+      padding: 0 25px 20px 25px;
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.08);
       line-height: 1.4;
+      overflow: hidden;
     }
 
-    .header {
+    .card-header {
       text-align: center;
-      margin-bottom: 20px;
+      padding: 15px;
+      margin: 0 -25px 15px -25px;
+      background: #f7f7f7;
     }
-    .header h2 {
+
+    .card-header h2 {
       font-size: 2.2em;
       font-weight: 500;
       border-bottom: 1px solid #000;
@@ -53,11 +57,31 @@
       padding-bottom: 3px;
       margin: 0;
     }
+
     .etymology {
       font-size: 1.1em;
       color: #007bff;
       font-style: italic;
       margin-top: 5px;
+    }
+
+    .label-trennbar {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .label-untrennbar {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #b71c1c;
+    }
+    .label-teils {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #bfa200;
     }
 
     .meaning-jp {
