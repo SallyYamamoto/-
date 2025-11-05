@@ -9,6 +9,7 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+
 if (document.getElementById("verbs")) {
   document.getElementById("verbs").innerHTML = `<p>読み込み中...</p>`;
 
