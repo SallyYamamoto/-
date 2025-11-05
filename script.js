@@ -10,6 +10,7 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+
 document.addEventListener("DOMContentLoaded", async () => {
   const data = await fetchData().catch(err => {
     console.error(err);
