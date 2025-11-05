@@ -1,124 +1,65 @@
-body {
-  font-family: 'Hiragino Sans', 'Meiryo', 'Yu Gothic', sans-serif;
-  color: #000;
-  background-color: #fff;
-  margin: 0;
-  padding: 40px 0;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>feststellen — ドイツ語接頭辞動詞カード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2列グリッド */
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+  <main class="card-container">
+    <div class="verb-card" style="--prefix-color: #fce4ec;">
+      <div class="header">
+        <h1>feststellen</h1>
+        <div class="etymology">fest + stellen</div>
+      </div>
 
-.verb-card {
-  background-color: var(--prefix-color, #f9f9f9);
-  border-radius: 12px;
-  padding: 25px 30px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-top: 8px solid rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
+      <div class="meaning-jp">確認する・特定する</div>
+      <div class="meaning-en">to ascertain; to determine</div>
 
-.verb-card:hover {
-  transform: translateY(-3px);
-}
+      <div class="detail-section">
+        <div class="detail-item">
+          <span class="detail-label">構成 :</span>
+          <span class="detail-value">fest（固定） + stellen</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">語感 :</span>
+          <span class="detail-value">情報や事実を確定させる。</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">構文 :</span>
+          <span class="detail-value"><span class="german-term">etwas feststellen</span></span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">活用 :</span>
+          <span class="detail-value"><span class="german-term">hat festgestellt – stellte fest</span></span>
+        </div>
+      </div>
 
-/* タイトル部分 */
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
+      <div class="example-section">
+        <div class="example-box">
+          <div class="vertical-line"></div>
+          <div class="example-content">
+            <p class="german-sentence">Die Polizei stellte fest, dass er gelogen hatte.</p>
+            <p class="japanese-translation">（警察は彼が嘘をついたと確認した。）</p>
+          </div>
+        </div>
+        <div class="example-box">
+          <div class="vertical-line"></div>
+          <div class="example-content">
+            <p class="german-sentence">Ich konnte keinen Fehler feststellen.</p>
+            <p class="japanese-translation">（私は誤りを確認できなかった。）</p>
+          </div>
+        </div>
+      </div>
 
-.header h1 {
-  font-size: 2.2em;
-  font-weight: 500;
-  margin: 0;
-  display: inline-block;
-  border-bottom: 1px solid #000;
-  padding-bottom: 3px;
-}
+      <div class="noun-form">
+        <span class="abc-icon">🔤</span>
+        <span class="german-term">Feststellung</span> （確認・特定）
+      </div>
+    </div>
+  </main>
 
-.etymology {
-  font-size: 1.1em;
-  color: #007bff;
-  font-style: italic;
-  margin-top: 5px;
-}
-
-/* 意味 */
-.meaning-jp {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin: 20px 0 5px 0;
-}
-
-.meaning-en {
-  font-style: italic;
-  font-size: 1em;
-  margin-bottom: 20px;
-}
-
-/* 詳細情報 */
-.detail-item {
-  display: flex;
-  margin-bottom: 6px;
-}
-
-.detail-label {
-  width: 80px;
-  color: #444;
-  font-weight: 600;
-}
-
-.detail-value {
-  flex: 1;
-}
-
-.german-term {
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-style: italic;
-}
-
-/* 例文セクション */
-.example-section {
-  margin-top: 25px;
-}
-
-.example-box {
-  display: flex;
-  margin-bottom: 12px;
-}
-
-.vertical-line {
-  border-left: 2px solid #000;
-  margin-right: 10px;
-}
-
-.german-sentence {
-  margin: 0;
-  font-weight: normal;
-}
-
-.japanese-translation {
-  font-size: 0.9em;
-  color: #333;
-  margin: 0;
-}
-
-/* 名詞形 */
-.noun-form {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.abc-icon {
-  font-size: 1.2em;
-  color: #007bff;
-  margin-right: 6px;
-}
+</body>
+</html>
