@@ -4,16 +4,17 @@ layout: default
 {% assign verb = site.data.german_verbs | where: '単語', page.title | first %}
 
 <style>
-    .verb-header { text-align: center; border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-bottom: 20px; }
-    .verb-header h1 { font-size: 2.5em; color: #333; margin: 0; }
+    .verb-header { text-align: left; margin-bottom: 25px; padding-bottom: 5px; }
+    .verb-header h1 { font-size: 2.8em; color: #333; margin: 0; }
     .etymology { font-size: 1.1em; color: #1976d2; font-style: italic; margin-top: 5px; }
-    .meaning-jp { font-size: 1.4em; font-weight: bold; margin: 20px 0 5px 0; }
-    .meaning-en { font-style: italic; margin-bottom: 25px; }
+    .meaning-jp { font-size: 1.5em; font-weight: bold; margin: 20px 0 5px 0; }
+    .meaning-en { font-style: italic; margin-bottom: 20px; }
+    .detail-section { border: 1px solid #ddd; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
     .detail-item { display: flex; margin-bottom: 6px; }
-    .detail-label { width: 90px; font-weight: normal; margin-right: 10px; color: #555; }
-    .german-term { font-family: 'Consolas', monospace; font-style: italic; }
+    .detail-label { width: 90px; font-weight: bold; margin-right: 10px; color: #555; }
+    .german-term { font-family: 'Consolas', monospace; font-style: italic; background-color: #f0f4f7; padding: 0 4px; border-radius: 3px;}
     .example-section { margin-top: 25px; }
-    .example-box { border-left: 2px solid #333; padding-left: 10px; margin-bottom: 15px; }
+    .example-box { border-left: 3px solid #666; padding-left: 10px; margin-bottom: 15px; }
     .german-sentence { font-weight: normal; margin: 0; }
     .japanese-translation { font-size: 0.9em; color: #666; margin: 0; line-height: 1.2; }
     .derived { margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
@@ -26,12 +27,12 @@ layout: default
     </div>
 
     <div class="meaning-jp">{{ verb.意味 }}</div>
-    <div class="meaning-en">to {{ verb.対応英単語 }}</div>
+    <div class="meaning-en">{{ verb.英訳 }}</div>
 
     <div class="detail-section">
         <div class="detail-item">
-            <span class="detail-label">構成 :</span>
-            <span class="detail-value">{{ verb.接頭辞 }} ({{ verb.接頭辞基本意味 }}) + {{ verb.基幹 }}</span>
+            <span class="detail-label">接頭辞基本意味:</span>
+            <span class="detail-value">{{ verb.接頭辞基本意味 }}</span>
         </div>
         <div class="detail-item">
             <span class="detail-label">語感 :</span>
@@ -43,10 +44,12 @@ layout: default
         </div>
         <div class="detail-item">
             <span class="detail-label">活用 :</span>
-            <span class="detail-value">...</span> </div>
+            <span class="detail-value">hat festgestellt - stellte fest (例として)</span>
+        </div>
     </div>
 
     <div class="example-section">
+        <h2>例文</h2>
         <div class="example-box">
             <p class="german-sentence">{{ verb.例文1 }}</p>
             <p class="japanese-translation">（{{ verb.日本語訳1 }}）</p>
@@ -60,6 +63,6 @@ layout: default
     </div>
 
     <div class="derived">
-        🔤 <span class="german-term">{{ verb.派生語 }}</span>
+        🔤 派生語: <span class="german-term">{{ verb.派生語 }}</span>
     </div>
 </div>
