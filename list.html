@@ -2,114 +2,138 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ドイツ語接頭辞動詞一覧</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ドイツ語 接頭辞動詞データベース</title>
   <style>
     body {
-      font-family: "Noto Sans JP", sans-serif;
-      color: #222;
-      line-height: 1.6;
-      margin: 2em auto;
+      font-family: 'Hiragino Sans', 'Meiryo', 'Yu Gothic', sans-serif;
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      line-height: 1.5;
       max-width: 1100px;
-      padding: 0 1em;
+      margin: 0 auto;
     }
 
     h1 {
       color: #004d40;
-      border-bottom: 3px solid #00796b;
-      padding-bottom: 0.3em;
-      margin-bottom: 1em;
+      font-size: 1.8em;
+      border-bottom: 2px solid #00796b;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
-
     @media (max-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
     }
 
     .card {
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 10px;
-      background: #fafafa;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      overflow: hidden;
+      padding: 20px 25px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      line-height: 1.4;
     }
 
-    .card-header {
-      background-color: #f0f0f0;
-      padding: 12px;
+    .header {
       text-align: center;
-      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
     }
-
-    .card-header h2 {
-      font-size: 1.8em;
+    .header h2 {
+      font-size: 2.2em;
+      font-weight: 500;
+      border-bottom: 1px solid #000;
+      display: inline-block;
+      padding-bottom: 3px;
       margin: 0;
-      font-weight: 600;
     }
-
-    .card-header small {
-      color: #00796b;
+    .etymology {
+      font-size: 1.1em;
+      color: #007bff;
       font-style: italic;
-      font-size: 1em;
+      margin-top: 5px;
     }
 
-    .card-body {
-      padding: 1em 1.2em;
-    }
-
-    .meaning {
+    .meaning-jp {
       font-size: 1.3em;
       font-weight: bold;
-      margin-bottom: 0.2em;
+      margin-top: 15px;
     }
-
-    .english {
-      color: #555;
+    .meaning-en {
       font-style: italic;
-      margin-bottom: 0.8em;
+      font-size: 1em;
+      color: #444;
+      margin-bottom: 20px;
     }
 
-    .section {
-      margin-bottom: 8px;
+    .detail-item {
+      display: flex;
+      margin-bottom: 5px;
     }
-
-    .label {
-      font-weight: bold;
+    .detail-label {
+      width: 80px;
       color: #0277bd;
-      display: inline-block;
-      width: 4em;
+      font-weight: normal;
+      margin-right: 10px;
     }
-
-    .example {
-      background: #f9f9f9;
-      padding: 6px 10px;
-      border-left: 3px solid #00796b;
-      margin-top: 6px;
-      margin-bottom: 6px;
+    .detail-value {
+      flex-grow: 1;
     }
-
-    .derived {
-      border-top: 1px solid #ccc;
-      padding-top: 8px;
+    .german-term {
+      font-family: 'Consolas', 'Courier New', monospace;
       font-style: italic;
-      color: #555;
     }
 
-    .derived::before {
-      content: "🅰 ";
+    .example-section {
+      margin-top: 20px;
+    }
+    .example-box {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: flex-start;
+    }
+    .vertical-line {
+      border-left: 1px solid #000;
+      height: auto;
+      margin-right: 10px;
+      min-height: 2.5em;
+    }
+    .example-content {
+      flex-grow: 1;
+    }
+    .german-sentence {
+      margin: 0;
+    }
+    .japanese-translation {
+      font-size: 0.9em;
+      color: #333;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .noun-form {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .abc-icon {
+      font-size: 1.3em;
+      color: #007bff;
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
+
   <h1 id="title">接頭辞・基幹別一覧</h1>
   <div id="verbs" class="grid"><p>読み込み中...</p></div>
+
   <script src="script.js"></script>
 </body>
 </html>
