@@ -1,48 +1,29 @@
+/* ===============================
+   feststellen スタイル適用
+   =============================== */
 body {
   font-family: 'Hiragino Sans', 'Meiryo', 'Yu Gothic', sans-serif;
   color: #000;
   background-color: #fff;
-  margin: 0;
-  padding: 40px 0;
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2列グリッド */
-  gap: 30px;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  line-height: 1.4;
+  max-width: 500px;
+  padding: 20px;
 }
 
-.verb-card {
-  background-color: var(--prefix-color, #f9f9f9);
-  border-radius: 12px;
-  padding: 25px 30px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-top: 8px solid rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
-
-.verb-card:hover {
-  transform: translateY(-3px);
-}
-
-/* タイトル部分 */
+/* ヘッダー */
 .header {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .header h1 {
-  font-size: 2.2em;
+  font-size: 2.5em;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 5px 0;
   display: inline-block;
   border-bottom: 1px solid #000;
   padding-bottom: 3px;
 }
-
 .etymology {
   font-size: 1.1em;
   color: #007bff;
@@ -56,7 +37,6 @@ body {
   font-weight: bold;
   margin: 20px 0 5px 0;
 }
-
 .meaning-en {
   font-style: italic;
   font-size: 1em;
@@ -66,48 +46,48 @@ body {
 /* 詳細情報 */
 .detail-item {
   display: flex;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
-
 .detail-label {
   width: 80px;
-  color: #444;
-  font-weight: 600;
+  font-weight: normal;
+  margin-right: 10px;
 }
-
 .detail-value {
-  flex: 1;
+  flex-grow: 1;
 }
-
 .german-term {
   font-family: 'Consolas', 'Courier New', monospace;
   font-style: italic;
 }
 
-/* 例文セクション */
+/* 例文 */
 .example-section {
-  margin-top: 25px;
+  margin-top: 30px;
 }
-
 .example-box {
   display: flex;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  align-items: flex-start;
 }
-
 .vertical-line {
-  border-left: 2px solid #000;
+  border-left: 1px solid #000;
+  height: auto;
   margin-right: 10px;
+  min-height: 2.5em;
 }
-
+.example-content {
+  flex-grow: 1;
+}
 .german-sentence {
-  margin: 0;
   font-weight: normal;
+  margin: 0;
 }
-
 .japanese-translation {
   font-size: 0.9em;
   color: #333;
   margin: 0;
+  line-height: 1.2;
 }
 
 /* 名詞形 */
@@ -116,9 +96,8 @@ body {
   display: flex;
   align-items: center;
 }
-
 .abc-icon {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #007bff;
-  margin-right: 6px;
+  margin-right: 5px;
 }
